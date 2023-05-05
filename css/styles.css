@@ -179,13 +179,12 @@ ol {
 
 .menu-link::after {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   content: '';
   display: block;
   width: 100%;
   height: 4px;
-
   border-radius: 2px;
 }
 
@@ -263,8 +262,7 @@ ol {
   letter-spacing: 0.04em;
   color: #ffffff;
   border-radius: 4px;
-  transition: color var(--transition-dur-and-func),
-    background-color var(--transition-dur-and-func);
+  transition: background-color var(--transition-dur-and-func);
 }
 
 .hero-btn:hover,
@@ -501,11 +499,12 @@ ol {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 576px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--transition-dur-and-func);
 }
 
 .modal-close-btn {
@@ -521,12 +520,14 @@ ol {
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  transition: background-color var(--transition-dur-and-func);
+  transition: background-color var(--transition-dur-and-func),
+    border var(--transition-dur-and-func);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: #404bbf;
+  border: none;
 }
 
 .modal-close-btn-icon {
@@ -563,9 +564,9 @@ ol {
   color: #4d5ae5;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  transition: border var(--transition-dur-and-func),
+  transition: color var(--transition-dur-and-func),
     background-color var(--transition-dur-and-func),
-    color var(--transition-dur-and-func),
+    border-color var(--transition-dur-and-func),
     box-shadow var(--transition-dur-and-func);
 }
 
@@ -623,6 +624,7 @@ ol {
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 40px 32px;
   overflow: auto;
   transform: translate(0, 100%);
   transition: transform var(--transition-dur-and-func);
